@@ -148,7 +148,82 @@
             </div>
         </div>
     </div>
+<!-- Botão para abrir o formulário -->
+<div class="text-center mt-4">
+    <button type="button" class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#modalContato">
+        Entre em contato
+    </button>
+</div>
 </section>
+<!-- Janela modal de contato - cria a janela que aparece sobre a página -->
+<div class="modal fade" id="modalContato" tabindex="-1"
+    aria-labelledby="tituloModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloModal">
+                    Entre em contato
+                </h5>
+                <button type="button" class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Fechar">
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="formContato">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">                            Nome
+                        </label>
+                        <input type="text" class="form-control"                            id="nome" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">                            E-mail
+                        </label>
+                        <input type="email" class="form-control"                            id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="assunto" class="form-label">                            Assunto
+                        </label>
+                        <input type="text" class="form-control"
+                            id="assunto" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensagem" class="form-label">                            Mensagem
+                        </label>
+                        <textarea class="form-control"
+                            id="mensagem" rows="4"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">
+                        Enviar mensagem
+                    </button>
+                </form>
+
+<!-- Mensagem de sucesso -->
+<div id="mensagemSucesso"
+    class="alert alert-success d-none mt-3"
+    role="alert">
+    Mensagem enviada com sucesso!
+</div>
+            </div>
+        </div>
+    </div>
+</div>
     <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+<script>
+    const formContato = document.getElementById("formContato");
+    const mensagemSucesso = document.getElementById("mensagemSucesso");
+    formContato.addEventListener("submit", function(event) {
+        event.preventDefault();
+        if (!formContato.checkValidity()) {
+            formContato.reportValidity();
+            return;
+        }
+        mensagemSucesso.classList.remove("d-none");
+        formContato.reset();
+    });
+</script>
 </body>
 </html>
