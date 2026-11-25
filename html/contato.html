@@ -5,30 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="contato.html">Contato</a>
-    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <div class="card">
-            <h1>Entre em contato para mais informações</h1>
-            <form>
-                <label>Nome:</label><br><br>
-                <input type="text" placeholder="Digite seu nome"><br><br>
-                <label>Email:</label><br><br>
-                <input type="email" placeholder="Digite seu email"><br><br>
-                <label>Mensagem:</label><br><br>
-                <input type="mensagem" placeholder="Deixe uma mensagem sobre a avaliação do conteúdo"><br><br>
-                <button type="submit">Enviar</button>
-            </form>
+       <a class="navbar-brand fw-bold" href="index.html"> FUTSAL</a>
+        <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuNavegacao"
+            aria-controls="menuNavegacao"
+            aria-expanded="false"
+            aria-label="Abrir menu de navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuNavegacao">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sobre.html">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="contato.html">Contato</a>
+                </li>
+            </ul>
         </div>
     </div>
-    <footer>
-        Site desenvolvido por Bruna Copatti Benetti - Atividade escolar
-    </footer>
+</nav>
+    <div class="container">
+        <div class="card">
+            <h1 class="text-center mb-4">Entre em contato para mais informações</h1>
+            <div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow p-4 texto-animado">
+                <h2 class="text-center mb-4 texto-animado">Entre em contato</h2>
+                <form id="formContato">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control"
+                            id="nome" placeholder="Digite seu nome" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" class="form-control"
+                            id="email" placeholder="Digite seu e-mail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensagem" class="form-label">Mensagem</label>
+                        <textarea class="form-control" id="mensagem"
+                            rows="4" placeholder="Digite sua mensagem" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100">
+                        Enviar
+                    </button>
+                    <div id="mensagemSucesso"
+                        class="alert alert-success d-none mt-3">
+                        Mensagem enviada com sucesso!
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
     <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+    <script>
+    const formContato = document.getElementById("formContato");
+    const mensagemSucesso = document.getElementById("mensagemSucesso");
+    formContato.addEventListener("submit", function(event) {
+        event.preventDefault();
+        if (!formContato.checkValidity()) {
+            formContato.reportValidity();
+            return;
+        }
+        mensagemSucesso.classList.remove("d-none");
+        formContato.reset();
+    });
+</script>
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container text-center">
+        <h5 class="fw-bold">FUTSAL</h5>
+        <p>Paixão pelo esporte, união e trabalho em equipe!</p>
+        <p class="mb-0 mt-2">
+            © 2026 Futsal - Todos os direitos reservados.
+        </p>
+    </div>
+</footer>
 </body>
 </html>
