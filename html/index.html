@@ -1,229 +1,210 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <!-- Configurações do site-->
-<head> 
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade Sobre Desenvolvimento Utilizando Framework</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 <!--Tudo que aparece visualmente-->
-<body>   
-<!-- Cria o menu  de navegação -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+<body>
+    <!-- Cria o menu  de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <!-- Logo do site -->
+            <a class="navbar-brand fw-bold" href="index.html">
+                FUTSAL
+            </a>
+            <!-- Botão para telas menores -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacao"
+                aria-controls="menuNavegacao" aria-expanded="false" aria-label="Abrir menu de navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Links do menu -->
+            <div class="collapse navbar-collapse" id="menuNavegacao">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Carrossel de imagens -->
+    <div id="carrosselFutsal" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicadores das imagens -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carrosselFutsal" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Imagem 1">
+            </button>
+            <button type="button" data-bs-target="#carrosselFutsal" data-bs-slide-to="1" aria-label="Imagem 2">
+            </button>
+        </div>
+        <!-- Imagens do carrossel -->
+        <div class="carousel-inner">
+            <!-- Primeira imagem -->
+            <div class="carousel-item active">
+                <img src="../img/futsal2.jpg.jpeg" class="d-block w-100 imagem-carrossel" alt="Partida de futsal">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>O mundo do Futsal</h2>
+                    <p>Conheça mais sobre esse esporte apaixonante!</p>
+                </div>
+            </div>
+            <!-- Segunda imagem -->
+            <div class="carousel-item">
+                <img src="../img/futsal1.jpg.jpeg" class="d-block w-100 imagem carrossel" alt="Prática do futsal">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Paixão pelo esporte</h2>
+                    <p>O futsal vai muito além das quatro linhas.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Botão anterior -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carrosselFutsal" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <!-- Botão próximo -->
+        <button class="carousel-control-next" type="button" data-bs-target="#carrosselFutsal" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>
+    <!-- Seção sobre o futsal -->
+    <section class="container my-5">
+        <div class="text-center mb-4">
+            <h2 class="texto-animado">Conheça mais sobre o Futsal</h2>
+            <p class="texto-animado">
+                O futsal é um esporte coletivo que une habilidade,
+                velocidade, trabalho em equipe e paixão pelo jogo.
+            </p>
+        </div>
+        <div class="row g-4">
+            <!-- Primeiro card -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title texto-animado">O esporte</h5>
+                        <p class="card-text texto-animado">
+                            O futsal é praticado por duas equipes,
+                            com cinco jogadores em cada time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Segundo card -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title texto-animado">Trabalho em equipe</h5>
+                        <p class="card-text texto-animado">
+                            A união e a comunicação entre os jogadores
+                            são fundamentais durante uma partida.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Terceiro card -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title texto-animado">Paixão pelo futsal</h5>
+                        <p class="card-text texto-animado">
+                            Além da competição, o esporte proporciona
+                            diversão, amizade e aprendizado.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Botão para abrir o formulário -->
+        <div class="text-center mt-4">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalContato">
+                Entre em contato
+            </button>
+        </div>
+    </section>
+    <!-- Janela modal de contato - cria a janela que aparece sobre a página -->
+    <div class="modal fade" id="modalContato" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloModal">
+                        Entre em contato
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="formContato">
+                        <div class="mb-3">
+                            <label for="nome" class="form-label"> Nome
+                            </label>
+                            <input type="text" class="form-control" id="nome" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label"> E-mail
+                            </label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="assunto" class="form-label"> Assunto
+                            </label>
+                            <input type="text" class="form-control" id="assunto" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensagem" class="form-label"> Mensagem
+                            </label>
+                            <textarea class="form-control" id="mensagem" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">
+                            Enviar mensagem
+                        </button>
+                    </form>
+
+                    <!-- Mensagem de sucesso -->
+                    <div id="mensagemSucesso" class="alert alert-success d-none mt-3" role="alert">
+                        Mensagem enviada com sucesso!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+<!-- Rodapé do site -->
+<footer class="bg-dark text-white text-center py-4 mt-5">
     <div class="container">
-        <!-- Logo do site -->
-        <a class="navbar-brand fw-bold" href="index.html">
-            FUTSAL
-        </a>
-        <!-- Botão para telas menores -->
-        <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#menuNavegacao"
-            aria-controls="menuNavegacao"
-            aria-expanded="false"
-            aria-label="Abrir menu de navegação">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Links do menu -->
-        <div class="collapse navbar-collapse" id="menuNavegacao">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="sobre.html">Sobre</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contato.html">Contato</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<!-- Carrossel de imagens -->
-<div id="carrosselFutsal" class="carousel slide"
-     data-bs-ride="carousel">
-    <!-- Indicadores das imagens -->
-    <div class="carousel-indicators">
-        <button type="button"
-            data-bs-target="#carrosselFutsal"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Imagem 1">
-        </button>
-        <button type="button"
-            data-bs-target="#carrosselFutsal"
-            data-bs-slide-to="1"
-            aria-label="Imagem 2">
-        </button>
-    </div>
-    <!-- Imagens do carrossel -->
-    <div class="carousel-inner">
-        <!-- Primeira imagem -->
-        <div class="carousel-item active">
-            <img src="../img/futsal2.jpg.jpeg"
-                 class="d-block w-100 imagem-carrossel"
-                 alt="Partida de futsal">
-            <div class="carousel-caption d-none d-md-block">
-                <h2>O mundo do Futsal</h2>
-                <p>Conheça mais sobre esse esporte apaixonante!</p>
-            </div>
-        </div>
-        <!-- Segunda imagem -->
-        <div class="carousel-item">
-            <img src="../img/futsal1.jpg.jpeg"
-                 class="d-block w-100 imagem carrossel"
-                 alt="Prática do futsal">
-            <div class="carousel-caption d-none d-md-block">
-                <h2>Paixão pelo esporte</h2>
-                <p>O futsal vai muito além das quatro linhas.</p>
-            </div>
-        </div>
-    </div>
-    <!-- Botão anterior -->
-    <button class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carrosselFutsal"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"
-              aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-    </button>
-    <!-- Botão próximo -->
-    <button class="carousel-control-next"
-        type="button"
-        data-bs-target="#carrosselFutsal"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon"
-              aria-hidden="true"></span>
-        <span class="visually-hidden">Próximo</span>
-    </button>
-</div>
-<!-- Seção sobre o futsal -->
-<section class="container my-5">
-    <div class="text-center mb-4">
-        <h2>Conheça mais sobre o Futsal</h2>
+        <h5 class="fw-bold">FUTSAL</h5>
         <p>
-            O futsal é um esporte coletivo que une habilidade,
-            velocidade, trabalho em equipe e paixão pelo jogo.
+            Paixão pelo esporte, união e trabalho em equipe!
+        </p>
+        <p class="mb-0">
+            © 2026 Futsal - Todos os direitos reservados.
         </p>
     </div>
-    <div class="row g-4">
-        <!-- Primeiro card -->
-        <div class="col-md-4">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">O esporte</h5>
-                    <p class="card-text">
-                        O futsal é praticado por duas equipes,
-                        com cinco jogadores em cada time.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!-- Segundo card -->
-        <div class="col-md-4">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">Trabalho em equipe</h5>
-                    <p class="card-text">
-                        A união e a comunicação entre os jogadores
-                        são fundamentais durante uma partida.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!-- Terceiro card -->
-        <div class="col-md-4">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">Paixão pelo futsal</h5>
-                    <p class="card-text">
-                        Além da competição, o esporte proporciona
-                        diversão, amizade e aprendizado.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-<!-- Botão para abrir o formulário -->
-<div class="text-center mt-4">
-    <button type="button" class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#modalContato">
-        Entre em contato
-    </button>
-</div>
-</section>
-<!-- Janela modal de contato - cria a janela que aparece sobre a página -->
-<div class="modal fade" id="modalContato" tabindex="-1"
-    aria-labelledby="tituloModal" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="tituloModal">
-                    Entre em contato
-                </h5>
-                <button type="button" class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Fechar">
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="formContato">
-                    <div class="mb-3">
-                        <label for="nome" class="form-label">                            Nome
-                        </label>
-                        <input type="text" class="form-control"                            id="nome" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">                            E-mail
-                        </label>
-                        <input type="email" class="form-control"                            id="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="assunto" class="form-label">                            Assunto
-                        </label>
-                        <input type="text" class="form-control"
-                            id="assunto" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="mensagem" class="form-label">                            Mensagem
-                        </label>
-                        <textarea class="form-control"
-                            id="mensagem" rows="4"
-                            required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">
-                        Enviar mensagem
-                    </button>
-                </form>
-
-<!-- Mensagem de sucesso -->
-<div id="mensagemSucesso"
-    class="alert alert-success d-none mt-3"
-    role="alert">
-    Mensagem enviada com sucesso!
-</div>
-            </div>
-        </div>
-    </div>
-</div>
+</footer>
     <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
-<script>
-    const formContato = document.getElementById("formContato");
-    const mensagemSucesso = document.getElementById("mensagemSucesso");
-    formContato.addEventListener("submit", function(event) {
-        event.preventDefault();
-        if (!formContato.checkValidity()) {
-            formContato.reportValidity();
-            return;
-        }
-        mensagemSucesso.classList.remove("d-none");
-        formContato.reset();
-    });
-</script>
+    <script>
+        const formContato = document.getElementById("formContato");
+        const mensagemSucesso = document.getElementById("mensagemSucesso");
+        formContato.addEventListener("submit", function (event) {
+            event.preventDefault();
+            if (!formContato.checkValidity()) {
+                formContato.reportValidity();
+                return;
+            }
+            mensagemSucesso.classList.remove("d-none");
+            formContato.reset();
+        });
+    </script>
 </body>
 </html>
